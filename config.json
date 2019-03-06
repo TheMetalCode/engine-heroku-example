@@ -1,11 +1,10 @@
 {
-  "apiKey": "<YOUR_API_KEY_HERE>",
   "origins": [
     {
       "http": {
-        "url": "https://yourappname.herokuapp.com/graphql",
+        "url": "https://sample-graphql-ruby.herokuapp.com/graphql",
         "overrideRequestHeaders": {
-          "Host": "<yourappname.herokuapp.com>"
+          "Host": "sample-graphql-ruby.herokuapp.com"
         }
       }
     }

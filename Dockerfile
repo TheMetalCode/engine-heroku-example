@@ -5,4 +5,4 @@ FROM gcr.io/mdg-public/engine:2018.02-50-gef2fc6d4e as engine
 COPY config.json /config.json
 
 # Start up Engine with the provided config
-ENTRYPOINT ["/engineproxy_linux_amd64", "-config", "/config.json"]
+CMD ["/engineproxy_linux_amd64", "-config", "/config.json"]
