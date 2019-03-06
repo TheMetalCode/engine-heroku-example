@@ -2,7 +2,7 @@
 FROM gcr.io/mdg-public/engine:2018.02-50-gef2fc6d4e as engine
 
 # Include your app-specific engine config file, renamed to config.json
-COPY config.json /config.json
+COPY config.json /engine.json
 
 # Start up Engine with the provided config
-CMD ["/engineproxy_linux_amd64", "-config", "/config.json"]
+CMD ["/engineproxy_linux_amd64", "-config", "/engine.json"]
