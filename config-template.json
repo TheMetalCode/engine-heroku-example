@@ -1,0 +1,48 @@
+{
+  "apiKey": "ENGINE_API_KEY",
+  "origins": [
+    {
+      "http": {
+        "url": "https://your-graphql-server.com/graphql",
+        "overrideRequestHeaders": {
+          "Host": "your-graphql-server.com"
+        }
+      }
+    }
+  ],
+  "frontends": [
+    {
+      "host": "0.0.0.0",
+      "portFromEnv": "PORT",
+      "endpoint": "/graphql"
+    }
+  ],
+  "stores": [
+    {
+      "name": "embeddedCache",
+      "inMemory": {
+        "cacheSize": 10485760
+      }
+    },
+    {
+      "name": "pq",
+      "inMemory": {
+        "cacheSize": 10485760
+      }
+    }
+  ],
+  "sessionAuth": {
+    "store": "embeddedCache",
+    "header": "Authorization"
+  },
+  "queryCache": {
+    "publicFullQueryStore": "embeddedCache",
+    "privateFullQueryStore": "embeddedCache"
+  },
+  "persistedQueries": {
+    "store": "pq"
+  },
+  "logging": {
+    "level": "DEBUG"
+  }
+}
